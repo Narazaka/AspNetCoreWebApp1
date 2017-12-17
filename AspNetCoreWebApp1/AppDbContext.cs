@@ -13,6 +13,7 @@ namespace AspNetCoreWebApp1
 
         protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptionsBuilder) {
             dbContextOptionsBuilder.UseSqlite("FileName=./app.db");
+            dbContextOptionsBuilder.UseLoggerFactory(ApplicationLogging.LoggerFactory);
         }
 
         public static ApplicationDbContext Current {
